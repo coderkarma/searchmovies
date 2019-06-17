@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
-import { withRouter } from "react-router";
+import { withRouter } from 'react-router';
+import '../Styles/SearchBar.css';
 
 class SearchBar extends Component {
 	state = {
@@ -8,7 +9,7 @@ class SearchBar extends Component {
 	};
 
 	render() {
-		const {history} = this.props
+		const { history } = this.props;
 		return (
 			<Form inline>
 				<FormControl
@@ -21,7 +22,7 @@ class SearchBar extends Component {
 					variant='outline-success'
 					onClick={() => {
 						if (this.state.value !== '') {
-							history.push('/search')
+							history.push('/search');
 							this.props.handleSubmit(this.state.value);
 						}
 					}}

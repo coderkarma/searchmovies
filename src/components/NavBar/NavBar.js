@@ -16,8 +16,6 @@ class NavBar extends Component {
 						</Nav>
 						<SearchBar handleSubmit={this.props.handleSubmit} />
 					</Navbar.Collapse>
-
-					{/* <pre>{JSON.stringify(this.state.result, null, 2)}</pre> */}
 				</Navbar>
 			</React.Fragment>
 		);

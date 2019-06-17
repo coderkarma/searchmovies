@@ -4,7 +4,7 @@ import Result from './components/Result/Result';
 import Index from './components/Routes/Index';
 import Search from './components/Routes/Search';
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
 	state = {

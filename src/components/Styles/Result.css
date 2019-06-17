@@ -1,0 +1,17 @@
+.result_images {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+
+}
+
+
+.result_images img:hover{
+   background-color: red;
+
+}
+
+
+.hover_icons {
+    visibility: hidden; 
+}
