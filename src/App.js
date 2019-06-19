@@ -5,6 +5,7 @@ import Index from './components/Routes/Index';
 import Search from './components/Routes/Search';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ResultCarousel from './components/Result/ResultCarousel';
 
 class App extends Component {
 	state = {
@@ -38,6 +39,7 @@ class App extends Component {
 				<Route path='/' exact component={Index} />
 				<Route path='/search/' component={Search} />
 
+				<ResultCarousel />
 				<Result results={this.state.results} />
 			</div>
 		);
