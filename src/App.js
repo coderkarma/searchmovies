@@ -6,14 +6,22 @@ import Search from './components/Routes/Search';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ResultCarousel from './components/Result/ResultCarousel';
-
+// import { withRouter } from 'react-router';
 class App extends Component {
 	state = {
 		// user       : null,
 		// isLoggedIn : false,
 		results : []
 	};
+	// componentDidUpdate(prevProps) {
+	// 	if (this.props.location !== prevProps.location) {
+	// 		this.routeChanged();
+	// 	}
+	// }
 
+	// routeChanged() {
+	// 	console.log('route has changed', this.props.location);
+	// }
 	handleSubmit = value => {
 		//encodeurl makes a valid string for url
 		let urlEncodedValue = encodeURIComponent(value);
@@ -33,15 +41,16 @@ class App extends Component {
 
 	render() {
 		return (
-			<div>
-				<NavBar handleSubmit={this.handleSubmit} />
+			<Router>
+				<div>
+					<NavBar handleSubmit={this.handleSubmit} />
+					<Route path='/' exact component={Index} />
+					<Route path='/search/' component={Search} />
 
-				<Route path='/' exact component={Index} />
-				<Route path='/search/' component={Search} />
-
-				<ResultCarousel />
-				<Result results={this.state.results} />
-			</div>
+					<ResultCarousel movies={this.state.handleSubmit} />
+					<Result results={this.state.results} />
+				</div>
+			</Router>
 		);
 	}
 }
