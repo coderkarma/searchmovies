@@ -12,7 +12,7 @@ class NavBar extends Component {
 					<Navbar.Collapse id='basic-navbar-nav'>
 						<Nav className='mr-auto'>
 							<Nav.Link href='/'>Home</Nav.Link>
-							<Nav.Link href='/search'>Search</Nav.Link>
+							<Nav.Link href='/discover'>Discover</Nav.Link>
 						</Nav>
 						<SearchBar handleSubmit={this.props.handleSubmit} />
 					</Navbar.Collapse>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import Result from './components/Result/Result';
 import Index from './components/Routes/Index';
-import Search from './components/Routes/Search';
+import Discover from './components/Routes/Discover';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ResultCarousel from './components/Result/ResultCarousel';
@@ -13,15 +13,7 @@ class App extends Component {
 		// isLoggedIn : false,
 		results : []
 	};
-	// componentDidUpdate(prevProps) {
-	// 	if (this.props.location !== prevProps.location) {
-	// 		this.routeChanged();
-	// 	}
-	// }
 
-	// routeChanged() {
-	// 	console.log('route has changed', this.props.location);
-	// }
 	handleSubmit = value => {
 		//encodeurl makes a valid string for url
 		let urlEncodedValue = encodeURIComponent(value);
@@ -45,7 +37,7 @@ class App extends Component {
 				<div>
 					<NavBar handleSubmit={this.handleSubmit} />
 					<Route path='/' exact component={Index} />
-					<Route path='/search/' component={Search} />
+					<Route path='/discover' component={Discover} />
 
 					<ResultCarousel movies={this.state.handleSubmit} />
 					<Result results={this.state.results} />
