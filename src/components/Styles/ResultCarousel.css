@@ -1,7 +1,12 @@
 .carousel_images img {
     width: 100vw;
-    height: 70vh;
+    height: 80vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
+}
+
+.carousel_images li {
+    display: none;
 }
