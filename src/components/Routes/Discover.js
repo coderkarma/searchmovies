@@ -29,11 +29,12 @@ class Discover extends Component {
 		let images = this.state.discoverMovies.map((movie, idx) => {
 			return (
 				<Col xs={12} md={4} lg={3} key={idx}>
-					<Card className='result_images'>
+					<Card>
 						<Card.Img
 							variant='top'
 							src={`${imageBaseUrl}${movie.backdrop_path}`}
 						/>
+						<Card.Title>{movie.title}</Card.Title>
 					</Card>
 				</Col>
 			);

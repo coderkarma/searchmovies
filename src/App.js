@@ -3,6 +3,7 @@ import NavBar from './components/NavBar/NavBar';
 import Result from './components/Result/Result';
 import Home from './components/Routes/Home';
 import Discover from './components/Routes/Discover';
+import Search from './components/Routes/Search';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import ResultCarousel from './components/Result/ResultCarousel';
@@ -31,15 +32,14 @@ class App extends Component {
 			.catch(error => console.log('there is an error', error));
 	};
 
-
-
 	render() {
 		return (
 			<Router>
 				<div>
 					<NavBar handleSubmit={this.handleSubmit} />
 					<Route path='/' exact component={Home} />
-					<Route path='/discover' component={Discover}  />
+					<Route path='/discover' component={Discover} />
+					<Route path='/search' component={Search} />
 
 					<Result results={this.state.results} />
 				</div>
