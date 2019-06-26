@@ -28,7 +28,7 @@ class Discover extends Component {
 	render() {
 		let images = this.state.discoverMovies.map((movie, idx) => {
 			return (
-				<Col xs={12} md={4} lg={3} key={idx}>
+				<Col xs={12} md={4} lg={4} key={idx}>
 					<Card>
 						<Card.Img
 							variant='top'

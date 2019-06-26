@@ -39,10 +39,12 @@ class ResultCarousel extends Component {
 										alt='First slide'
 									/>
 									<Carousel.Caption>
-										<h3>{movie.title}</h3>
+										<span>
+											<h1>Upcoming Movies</h1>
+										</span>
+										<h1>{movie.title}</h1>
 										<p>{movie.overview}</p>
 										<h1>
-											{' '}
 											Release Date- {movie.release_date}
 										</h1>
 									</Carousel.Caption>

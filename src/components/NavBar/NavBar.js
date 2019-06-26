@@ -17,7 +17,7 @@ class NavBar extends Component {
 								<FontAwesomeIcon icon={faCoffee} />
 							</Nav.Link>
 							<Nav.Link href='/discover'>Discover</Nav.Link>
-							<Nav.Link href='/popular'>Popular</Nav.Link>
+							<Nav.Link href='/now-playing'>Now Playing</Nav.Link>
 							<Nav.Link href='/top-rated'>Top Rated</Nav.Link>
 							<SearchBar handleSubmit={this.props.handleSubmit} />
 						</Nav>

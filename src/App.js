@@ -3,6 +3,7 @@ import NavBar from './components/NavBar/NavBar';
 import Result from './components/Result/Result';
 import Home from './components/Routes/Home';
 import Discover from './components/Routes/Discover';
+import NowPlaying from './components/Routes/NowPlaying';
 import Search from './components/Routes/Search';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -39,6 +40,7 @@ class App extends Component {
 					<NavBar handleSubmit={this.handleSubmit} />
 					<Route path='/' exact component={Home} />
 					<Route path='/discover' component={Discover} />
+					<Route path='/now-playing' component={NowPlaying} />
 					<Route path='/search' component={Search} />
 
 					<Result results={this.state.results} />
