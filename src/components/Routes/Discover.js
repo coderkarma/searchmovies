@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Card, Col, Row } from 'react-bootstrap';
-import '../Styles/Discover.css'
+import '../Styles/Discover.css';
 
 const discoverMovies =
 	'https://api.themoviedb.org/3/discover/movie?api_key=79ce19b11f80253ec95757f195144888&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1';
@@ -30,8 +30,8 @@ class Discover extends Component {
 		let images = this.state.discoverMovies.map((movie, idx) => {
 			if (movie.backdrop_path != null) {
 				return (
-					<Col xs={12} md={4} lg={4} key={idx} className="my-4">
-						<Card className='h-100'>
+					<Col xs={12} md={4} lg={4} key={idx} className='my-4 '>
+						<Card className='h-100 shadow'>
 							<Card.Img
 								variant='top'
 								src={`${imageBaseUrl}${movie.backdrop_path}`}
@@ -46,7 +46,7 @@ class Discover extends Component {
 			return null;
 		});
 		return (
-			<Container >
+			<Container>
 				<Row>{images}</Row>
 			</Container>
 		);
