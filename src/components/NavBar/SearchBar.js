@@ -13,9 +13,10 @@ class SearchBar extends Component {
 		return (
 			<Form inline>
 				<FormControl
+					id='input-field'
 					type='text'
 					placeholder='Search Movies...'
-					className='mr-sm-2 '
+					className='mr-sm-2'
 					onChange={e => this.setState({ value: e.target.value })}
 				/>
 				<Button

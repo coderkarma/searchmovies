@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { Container, Card, Col, Row } from 'react-bootstrap';
 
 const nowPlayingMovies =
-	// 'https://api.themoviedb.org/3/movie/popular?api_key=79ce19b11f80253ec95757f195144888&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1';
- 'https://api.themoviedb.org/3/movie/now_playing?api_key=79ce19b11f80253ec95757f195144888&language=en-US&page=1';
+	'https://api.themoviedb.org/3/movie/now_playing?api_key=79ce19b11f80253ec95757f195144888&language=en-US&page=1';
 
-//  https://api.themoviedb.org/3/movie/now_playing?api_key=<<api_key>>&language=en-US&page=1
 const imageBaseUrl = 'https://image.tmdb.org/t/p/original/';
 
 class NowPlaying extends Component {
@@ -31,13 +29,15 @@ class NowPlaying extends Component {
 	render() {
 		let images = this.state.playingMovies.map((movie, idx) => {
 			return (
-				<Col xs={12} md={4} lg={3} key={idx}>
-					<Card>
+				<Col xs={12} md={4} lg={4} key={idx} className='my-4'>
+					<Card className='my-3 h-100'>
 						<Card.Img
 							variant='top'
 							src={`${imageBaseUrl}${movie.backdrop_path}`}
 						/>
-						<Card.Title>{movie.title}</Card.Title>
+						<Card.Body>
+							<Card.Title>{movie.title}</Card.Title>
+						</Card.Body>
 					</Card>
 				</Col>
 			);
