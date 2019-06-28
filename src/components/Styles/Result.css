@@ -6,12 +6,8 @@
 }
 
 
-.result_images img:hover{
-   background-color: red;
+.result_images img:hover {
+    background-color: red;
+    position: absolute;
 
-}
-
-
-.hover_icons {
-    visibility: hidden; 
 }

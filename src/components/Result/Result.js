@@ -11,6 +11,7 @@ const Result = props => {
 				<Card className='result_images'>
 					<Card.Img variant='top' src={image} />
 				</Card>
+
 				<div className='hover_icons'>
 					<h1>hello</h1>
 				</div>

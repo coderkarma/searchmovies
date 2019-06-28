@@ -8,7 +8,8 @@ const imageBaseUrl = 'https://image.tmdb.org/t/p/original/';
 
 class NowPlaying extends Component {
 	state = {
-		playingMovies : []
+		playingMovies : [],
+		hover: false
 	};
 
 	nowPlayingMovies() {
