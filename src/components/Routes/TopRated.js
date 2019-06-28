@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Card, Col, Row } from 'react-bootstrap';
+import '../Styles/TopRated.css'
 
 const topRatedMovies =
 	'https://api.themoviedb.org/3/movie/top_rated?api_key=79ce19b11f80253ec95757f195144888&language=en-US&page=1';
@@ -24,7 +25,7 @@ const TopRated = props => {
 	let topMovies = topRated.map((movie, idx) => {
 		return (
 			<Col xs={12} md={4} lg={4} key={idx} className='my-4'>
-				<Card className='my-3 h-100'>
+				<Card className='my-3 h-100 card'>
 					<Card.Img
 						variant='top'
 						src={`${imageBaseUrl}${movie.backdrop_path}`}

@@ -8,8 +8,7 @@ const getUpcomingMovie =
 const imageBaseUrl = 'https://image.tmdb.org/t/p/original/';
 class ResultCarousel extends Component {
 	state = {
-		movies         : [],
-		featuredMovies : []
+		movies : []
 	};
 	getMovies() {
 		fetch(getUpcomingMovie)
@@ -41,10 +40,8 @@ class ResultCarousel extends Component {
 									/>
 									<Carousel.Caption>
 										<h4>Upcoming Movies</h4>
-										<span className="title">
-											<h1>
-												{movie.title}
-											</h1>
+										<span className='title'>
+											<h1>{movie.title}</h1>
 										</span>
 										<p>{movie.overview}</p>
 										<h1>
