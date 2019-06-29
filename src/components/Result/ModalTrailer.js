@@ -13,7 +13,7 @@ const ModelTrailer = props => {
 			.then(movieTrailer => {
 				console.log('Here is the movie trailer', movieTrailer);
 
-				const moviesTrailer = movieTrailer.videos.result;
+				const moviesTrailer = movieTrailer.videos.results[0].key;
 				console.log(moviesTrailer);
 
 				setIsShowing(true);
