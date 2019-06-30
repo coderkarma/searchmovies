@@ -10,7 +10,6 @@ const imageBaseUrl = 'https://image.tmdb.org/t/p/w500/';
 
 const TrendingShows = props => {
 	const [ trending, setTrendingShowstate ] = useState([]);
-	// const [ trailer, setTrailer ] = useState([]);
 	const [ currentModal, setCurrentModal ] = useState(null);
 
 	useEffect(() => {
@@ -52,6 +51,7 @@ const TrendingShows = props => {
 						{currentModal === idx ? (
 							<ModalTrailer
 								movieId={trendingShow.id}
+								movieTitle={trendingShow.title}
 								closeCallback={() => setCurrentModal(false)}
 							/>
 						) : (

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Card, Col, Row } from 'react-bootstrap';
+import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 
 const nowPlayingMovies =
 	'https://api.themoviedb.org/3/movie/now_playing?api_key=79ce19b11f80253ec95757f195144888&language=en-US&page=1';
@@ -9,7 +9,7 @@ const imageBaseUrl = 'https://image.tmdb.org/t/p/original/';
 class NowPlaying extends Component {
 	state = {
 		playingMovies : [],
-		hover: false
+		hover         : false
 	};
 
 	nowPlayingMovies() {
@@ -38,6 +38,9 @@ class NowPlaying extends Component {
 						/>
 						<Card.Body>
 							<Card.Title>{movie.title}</Card.Title>
+							<span className='text-center'>
+								<Button>Trailer</Button>
+							</span>
 						</Card.Body>
 					</Card>
 				</Col>

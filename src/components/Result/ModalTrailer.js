@@ -1,26 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import YoutubeVideo from '../Result/YoutubeVideo';
+import '../Styles/ModalTrailer.css';
 
 const ModelTrailer = props => {
 	const [ videoKey, setVideoKey ] = useState(undefined);
 
-	useEffect(
-		() => {
-            console.log("Effect has fired");
-			const movieTrailerEndPoint = `http://api.themoviedb.org/3/movie/${props.movieId}?api_key=79ce19b11f80253ec95757f195144888&append_to_response=videos`;
+	useEffect(() => {
+		console.log('Effect has fired');
+		const movieTrailerEndPoint = `http://api.themoviedb.org/3/movie/${props.movieId}?api_key=79ce19b11f80253ec95757f195144888&append_to_response=videos`;
 
-			fetch(movieTrailerEndPoint)
-				.then(response => response.json())
-				.then(movieTrailer => {
-					console.log('Here is the movie trailer', movieTrailer);
+		fetch(movieTrailerEndPoint)
+			.then(response => response.json())
+			.then(movieTrailer => {
+				console.log('Here is the movie trailer', movieTrailer);
 
-					const moviesTrailer = movieTrailer.videos.results[0].key;
+				const moviesTrailer = movieTrailer.videos.results[0].key;
 
-					setVideoKey(moviesTrailer);
-				});
-		}
-	);
+				setVideoKey(moviesTrailer);
+			});
+	});
 
 	return (
 		<div>
@@ -30,17 +29,16 @@ const ModelTrailer = props => {
 				centered
 				show={true}
 			>
-				<Modal.Header closeButton>
-					<Modal.Title id='contained-modal-title-vcenter'>
-						Modal heading
-					</Modal.Title>
-				</Modal.Header>
 				<Modal.Body>
-					<h4>Centered Modal</h4>
 					<YoutubeVideo videoKey={videoKey} />
 				</Modal.Body>
 				<Modal.Footer>
-					<Button onClick={() => props.closeCallback()}>Close</Button>
+					<Button
+						className='close-button'
+						onClick={() => props.closeCallback()}
+					>
+						Close
+					</Button>
 				</Modal.Footer>
 			</Modal>
 		</div>
