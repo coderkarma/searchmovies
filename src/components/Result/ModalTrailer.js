@@ -2,27 +2,25 @@ import React, { useEffect, useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import YoutubeVideo from '../Result/YoutubeVideo';
 
-const movieTrailerEndPoint = `http://api.themoviedb.org/3/movie/157336?api_key=79ce19b11f80253ec95757f195144888&append_to_response=videos`;
-
 const ModelTrailer = props => {
-	const [ isShowing, setIsShowing ] = useState(false);
+	const [ videoKey, setVideoKey ] = useState(undefined);
 
-	useEffect(() => {
-		fetch(movieTrailerEndPoint)
-			.then(response => response.json())
-			.then(movieTrailer => {
-				console.log('Here is the movie trailer', movieTrailer);
+	useEffect(
+		() => {
+            console.log("Effect has fired");
+			const movieTrailerEndPoint = `http://api.themoviedb.org/3/movie/${props.movieId}?api_key=79ce19b11f80253ec95757f195144888&append_to_response=videos`;
 
-				const moviesTrailer = movieTrailer.videos.results[0].key;
-				console.log(moviesTrailer);
+			fetch(movieTrailerEndPoint)
+				.then(response => response.json())
+				.then(movieTrailer => {
+					console.log('Here is the movie trailer', movieTrailer);
 
-				setIsShowing(true);
-			});
-	});
+					const moviesTrailer = movieTrailer.videos.results[0].key;
 
-	const closeModal = () => {
-		setIsShowing(false);
-	};
+					setVideoKey(moviesTrailer);
+				});
+		}
+	);
 
 	return (
 		<div>
@@ -30,7 +28,7 @@ const ModelTrailer = props => {
 				size='lg'
 				aria-labelledby='contained-modal-title-vcenter'
 				centered
-				show={isShowing}
+				show={true}
 			>
 				<Modal.Header closeButton>
 					<Modal.Title id='contained-modal-title-vcenter'>
@@ -39,10 +37,10 @@ const ModelTrailer = props => {
 				</Modal.Header>
 				<Modal.Body>
 					<h4>Centered Modal</h4>
-					<YoutubeVideo id='5794fffbc3a36829ab00056f' />
+					<YoutubeVideo videoKey={videoKey} />
 				</Modal.Body>
 				<Modal.Footer>
-					<Button onClick={closeModal}>Close</Button>
+					<Button onClick={() => props.closeCallback()}>Close</Button>
 				</Modal.Footer>
 			</Modal>
 		</div>

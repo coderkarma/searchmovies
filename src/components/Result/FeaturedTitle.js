@@ -51,6 +51,7 @@ const TrendingShows = props => {
 						</span>
 						{currentModal === idx ? (
 							<ModalTrailer
+								movieId={trendingShow.id}
 								closeCallback={() => setCurrentModal(false)}
 							/>
 						) : (
