@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 import ModalTrailer from '../Result/ModalTrailer';
+import '../Styles/NowPlaying.css';
 
 const nowPlayingMovies =
 	'https://api.themoviedb.org/3/movie/now_playing?api_key=79ce19b11f80253ec95757f195144888&language=en-US&page=1';
@@ -9,8 +10,7 @@ const imageBaseUrl = 'https://image.tmdb.org/t/p/original/';
 
 class NowPlaying extends Component {
 	state = {
-		playingMovies : [],
-		hover         : false
+		playingMovies : []
 	};
 
 	nowPlayingMovies() {
@@ -30,7 +30,7 @@ class NowPlaying extends Component {
 
 	handleClick = props => {
 		console.log('this is firinng karma');
-		return <ModalTrailer />; 
+		return <ModalTrailer />;
 	};
 
 	render() {
@@ -45,7 +45,10 @@ class NowPlaying extends Component {
 						<Card.Body>
 							<Card.Title>{movie.title}</Card.Title>
 							<span className='text-center'>
-								<Button onClick={this.handleClick}>
+								<Button
+									onClick={this.handleClick}
+									className='trailer-button'
+								>
 									Trailer
 								</Button>
 							</span>

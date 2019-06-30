@@ -1,0 +1,11 @@
+.shadow:hover {
+    border-color: black;
+}
+
+.trailer-button {
+    background-color: black;
+}
+
+.trailer-button:hover {
+    background-color: #28a745;
+}

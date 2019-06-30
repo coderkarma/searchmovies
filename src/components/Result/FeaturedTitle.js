@@ -33,7 +33,7 @@ const TrendingShows = props => {
 
 		return (
 			<Col xs={12} md={4} lg={4} key={idx} className='my-4'>
-				<Card className='my-3 h-100 card'>
+				<Card className='my-3 h-100 card shadow'>
 					<Card.Img
 						variant='top'
 						src={`${imageBaseUrl}${trendingShow.backdrop_path}`}
