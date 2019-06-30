@@ -42,7 +42,7 @@ const TrendingShows = props => {
 						<Card.Title>{trendingShow.title}</Card.Title>
 						<span className='trailer-div'>
 							<Button
-								className='primary'
+								className='primary '
 								onClick={e => handleTrailerOnClick(idx)}
 							>
 								Trailer!
@@ -51,7 +51,6 @@ const TrendingShows = props => {
 						{currentModal === idx ? (
 							<ModalTrailer
 								movieId={trendingShow.id}
-								movieTitle={trendingShow.title}
 								closeCallback={() => setCurrentModal(false)}
 							/>
 						) : (
@@ -64,7 +63,7 @@ const TrendingShows = props => {
 	});
 	return (
 		<Container>
-			<h2 className='mt-3 primary'>Trending Shows</h2>
+			<h2 className='mt-3 trending-shows'>Trending Shows</h2>
 			<Row>{trendingShows}</Row>
 		</Container>
 	);

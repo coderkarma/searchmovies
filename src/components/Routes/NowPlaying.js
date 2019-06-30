@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Card, Col, Row, Button } from 'react-bootstrap';
+import ModalTrailer from '../Result/ModalTrailer';
 
 const nowPlayingMovies =
 	'https://api.themoviedb.org/3/movie/now_playing?api_key=79ce19b11f80253ec95757f195144888&language=en-US&page=1';
@@ -27,6 +28,11 @@ class NowPlaying extends Component {
 		this.nowPlayingMovies();
 	}
 
+	handleClick = props => {
+		console.log('this is firinng karma');
+		return <ModalTrailer />; 
+	};
+
 	render() {
 		let images = this.state.playingMovies.map((movie, idx) => {
 			return (
@@ -39,7 +45,9 @@ class NowPlaying extends Component {
 						<Card.Body>
 							<Card.Title>{movie.title}</Card.Title>
 							<span className='text-center'>
-								<Button>Trailer</Button>
+								<Button onClick={this.handleClick}>
+									Trailer
+								</Button>
 							</span>
 						</Card.Body>
 					</Card>

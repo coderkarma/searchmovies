@@ -2,6 +2,26 @@
     margin: 0 auto;
 }
 
+.trailer-div button {
+    background-color: black;
+}
+
+.trailer-div button:hover {
+    background-color: #28a745;
+}
+
 .card-title {
+    text-align: center;
+}
+
+.trending-shows {
+    color: efeefe;
+}
+
+.trending-shows:hover {
+    color: #48b958
+}
+
+.card-body {
     text-align: center;
 }

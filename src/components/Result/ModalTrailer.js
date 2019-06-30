@@ -16,7 +16,7 @@ const ModelTrailer = props => {
 				console.log('Here is the movie trailer', movieTrailer);
 
 				const moviesTrailer = movieTrailer.videos.results[0].key;
-
+				console.log('moviesTrailer', movieTrailer.length);
 				setVideoKey(moviesTrailer);
 			});
 	});

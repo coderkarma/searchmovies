@@ -1,5 +1,7 @@
 .nav-bar {
-    background-color: rgba(41, 48, 59, .8)
+    background-color: rgba(41, 48, 59, .8);
+    background: radial-gradient(black, transparent);
+    padding: 1rem 0;
 }
 
 .navbar-light .navbar-nav .nav-link {
