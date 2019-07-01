@@ -28,7 +28,6 @@ const NowPlaying = props => {
 	let showMovies = movies.map((movie, idx) => {
 		const handleTrailerOnClick = movieIdx => {
 			setShowModal(movieIdx);
-			console.log('CLICKED' + movieIdx);
 		};
 		return (
 			<Col xs={12} md={4} lg={4} key={idx} className='my-4'>

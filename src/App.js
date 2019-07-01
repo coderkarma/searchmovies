@@ -8,8 +8,7 @@ import TopRated from './components/Routes/TopRated';
 import Search from './components/Routes/Search';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-// import ResultCarousel from './components/Result/ResultCarousel';
-// import { withRouter } from 'react-router';
+
 class App extends Component {
 	state = {
 		results : []

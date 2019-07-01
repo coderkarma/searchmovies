@@ -4,6 +4,7 @@ import YoutubeVideo from '../Result/YoutubeVideo';
 import '../Styles/ModalTrailer.css';
 
 const ModelTrailer = props => {
+	console.log('props ----', props);
 	const [ videoKey, setVideoKey ] = useState(undefined);
 
 	useEffect(() => {

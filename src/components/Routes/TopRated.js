@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Card, Col, Row } from 'react-bootstrap';
-import '../Styles/TopRated.css'
+import { Container, Card, Col, Row, Button } from 'react-bootstrap';
+import '../Styles/TopRated.css';
 
 const topRatedMovies =
 	'https://api.themoviedb.org/3/movie/top_rated?api_key=79ce19b11f80253ec95757f195144888&language=en-US&page=1';
@@ -32,6 +32,9 @@ const TopRated = props => {
 					/>
 					<Card.Body>
 						<Card.Title>{movie.title}</Card.Title>
+						<span>
+							<Button>Trailer</Button>
+						</span>
 					</Card.Body>
 				</Card>
 			</Col>
