@@ -25,7 +25,7 @@ const NowPlaying = props => {
 			});
 	}, []);
 
-	let images = playingMovies.map((movie, idx) => {
+	let allNowPlayingMovies = playingMovies.map((movie, idx) => {
 		const handleTrailerOnClick = movieIndex => {
 			setPlayingMovies(movieIndex);
 		};
@@ -61,7 +61,7 @@ const NowPlaying = props => {
 	});
 	return (
 		<Container>
-			<Row>{images}</Row>
+			<Row>{allNowPlayingMovies}</Row>
 		</Container>
 	);
 };
