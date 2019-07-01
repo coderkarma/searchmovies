@@ -9,25 +9,26 @@ const nowPlayingMovies =
 const imageBaseUrl = 'https://image.tmdb.org/t/p/original/';
 
 const NowPlaying = props => {
-	const [ playingMovies, setPlayingMovies ] = useState([]);
-	const [ currentModal, setCurrentModal ] = useState(null);
+	const [ movies, setMovies ] = useState([]);
+	const [ showModal, setShowModal ] = useState(null);
 
 	useEffect(() => {
 		fetch(nowPlayingMovies)
 			.then(response => {
 				return response.json();
 			})
-			.then(playingMovies => {
-				const playingAllMovies = playingMovies.results;
-				console.log('here are the playing movies ', playingAllMovies);
+			.then(movie => {
+				const allMovies = movie.results;
+				console.log('here are the playing movies ', allMovies);
 
-				setPlayingMovies(playingAllMovies);
+				setMovies(allMovies);
 			});
 	}, []);
 
-	let allNowPlayingMovies = playingMovies.map((movie, idx) => {
-		const handleTrailerOnClick = movieIndex => {
-			setPlayingMovies(movieIndex);
+	let showMovies = movies.map((movie, idx) => {
+		const handleTrailerOnClick = movieIdx => {
+			setShowModal(movieIdx);
+			console.log('CLICKED' + movieIdx);
 		};
 		return (
 			<Col xs={12} md={4} lg={4} key={idx} className='my-4'>
@@ -46,10 +47,10 @@ const NowPlaying = props => {
 								Trailer
 							</Button>
 						</span>
-						{currentModal === idx ? (
+						{showModal === idx ? (
 							<ModalTrailer
 								movieId={movie.id}
-								closeCallback={() => setCurrentModal(false)}
+								closeCallback={() => setShowModal(true)}
 							/>
 						) : (
 							''
@@ -61,7 +62,7 @@ const NowPlaying = props => {
 	});
 	return (
 		<Container>
-			<Row>{allNowPlayingMovies}</Row>
+			<Row>{showMovies}</Row>
 		</Container>
 	);
 };
