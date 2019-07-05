@@ -6,6 +6,7 @@ Never miss out the favorite movies that you have been eagarly waiting for.
 
 - Find upcoming movies in the theater.
 - Discover the different types of movies and Tv Shows
+- Watch offical movies trailer.
 
 
 # Api Used
