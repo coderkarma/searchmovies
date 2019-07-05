@@ -16,23 +16,23 @@ class NavBar extends Component {
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
 					<Navbar.Collapse id='basic-navbar-nav '>
 						<Nav className='mr-auto'>
-							<Nav.Link>
+							<Nav>
 								<Link to='/'>
 									<FontAwesomeIcon icon={faCoffee} />
 								</Link>
-							</Nav.Link>
+							</Nav>
 
-							<Nav.Link>
+							<Nav>
 								<Link to='/discover'> Discover</Link>
-							</Nav.Link>
+							</Nav>
 
-							<Nav.Link>
+							<Nav>
 								<Link to='/now-playing'> Now Playing</Link>
-							</Nav.Link>
+							</Nav>
 
-							<Nav.Link>
+							<Nav>
 								<Link to='/top-rated'>Top Rated</Link>
-							</Nav.Link>
+							</Nav>
 
 							<SearchBar handleSubmit={this.props.handleSubmit} />
 						</Nav>

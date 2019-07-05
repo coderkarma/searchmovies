@@ -1,5 +1,21 @@
+.navbar-nav {
+    padding-left: 4px;
+    margin-bottom: 0px;
+    text-decoration: none;
+    padding-top: 8px;
+    padding-right: 1rem;
+    color: white
+}
 
+.navbar-nav a {
+    color: white;
+    list-style: none;
+}
 
+.navbar-nav a:hover {
+    color: white;
+    text-decoration: none;
+}
 
 .nav-bar {
     background-color: rgba(41, 48, 59, .8);
