@@ -20,7 +20,8 @@ const Discover = props => {
 				const movieResult = movies.results;
 
 				setDiscoverMovies(movieResult);
-			});
+			})
+			.catch(err => console.log(err));
 	}, []);
 
 	let images = discoverMovies.map((movie, idx) => {

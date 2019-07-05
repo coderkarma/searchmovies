@@ -3,6 +3,8 @@ import { Navbar, Nav } from 'react-bootstrap';
 import SearchBar from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+
 import '../Styles/NavBar.css';
 
 class NavBar extends Component {
@@ -14,12 +16,23 @@ class NavBar extends Component {
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
 					<Navbar.Collapse id='basic-navbar-nav '>
 						<Nav className='mr-auto'>
-							<Nav.Link href='/'>
-								<FontAwesomeIcon icon={faCoffee} />
+							<Nav.Link>
+								<Link to='/'>
+									<FontAwesomeIcon icon={faCoffee} />
+								</Link>
 							</Nav.Link>
-							<Nav.Link href='/discover'>Discover</Nav.Link>
-							<Nav.Link href='/now-playing'>Now Playing</Nav.Link>
-							<Nav.Link href='/top-rated'>Top Rated</Nav.Link>
+
+							<Nav.Link>
+								<Link to='/discover'> Discover</Link>
+							</Nav.Link>
+
+							<Nav.Link>
+								<Link to='/now-playing'> Now Playing</Link>
+							</Nav.Link>
+
+							<Nav.Link>
+								<Link to='/top-rated'>Top Rated</Link>
+							</Nav.Link>
 
 							<SearchBar handleSubmit={this.props.handleSubmit} />
 						</Nav>

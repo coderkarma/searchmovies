@@ -22,7 +22,8 @@ const NowPlaying = props => {
 				console.log('here are the playing movies ', allMovies);
 
 				setMovies(allMovies);
-			});
+			})
+			.catch(err => console.log('error ', err));
 	}, []);
 
 	let showMovies = movies.map((movie, idx) => {

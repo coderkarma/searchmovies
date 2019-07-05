@@ -19,7 +19,8 @@ const ModelTrailer = props => {
 				const moviesTrailer = movieTrailer.videos.results[0].key;
 
 				setVideoKey(moviesTrailer);
-			});
+			})
+			.catch(error => console.log("here's the error", error));
 	});
 
 	return (
