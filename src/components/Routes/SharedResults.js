@@ -12,7 +12,8 @@ const NowPlaying = ({ url }) => {
   useEffect(() => {
     fetch(url)
       .then(response => {
-        if (!response.ok) throw Error(`It went wrong ${res.status} message: ${res.statusText}`)
+        if (!response.ok)
+          throw Error(`It went wrong ${response.status} message: ${response.statusText}`)
         return response.json()
       })
       .then(movie => {
