@@ -37,7 +37,7 @@ class App extends Component {
           <Route path="/discover" component={() => <SharedResults url={discover} />} />
           <Route path="/now-playing" component={() => <SharedResults url={nowPlaying} />} />
           <Route path="/top-rated" component={() => <SharedResults url={topRated} />} />
-          <Route path="/search" component={Search} />
+          <Route path="/search/:movie" component={Search} />
 
           <Result results={this.state.results} />
         </div>
