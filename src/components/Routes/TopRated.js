@@ -5,7 +5,7 @@ import '../Styles/TopRated.css'
 const topRatedMovies =
   'https://api.themoviedb.org/3/movie/top_rated?api_key=79ce19b11f80253ec95757f195144888&language=en-US&page=1'
 
-const imageBaseUrl = 'https://image.tmdb.org/t/p/w500/'
+const imageBaseUrl = 'https://image.tmdb.org/t/p/original/'
 
 const TopRated = props => {
   const [topRated, setTopRatedState] = useState([])
