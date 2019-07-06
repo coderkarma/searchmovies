@@ -15,7 +15,7 @@ const NowPlaying = ({ url }) => {
       .then(movie => {
         setMovies(movie.results)
       })
-  }, [])
+  }, [url])
 
   const showMovies = movies.map(movie => (
     <Col xs={12} md={4} lg={4} key={movie.id} className="my-4">
