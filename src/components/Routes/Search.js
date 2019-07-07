@@ -1,15 +1,17 @@
-import React from 'react';
+import React from 'react'
 
-const Search = ({ props, movie }) => {
-	console.log('what is here', props.match.params);
-	const url = `props.match.params:${movie}`;
+// visit http://localhost:3000/search/avengers in browser address bar with app running
 
-	return (
-		<div>
-			<h1>Search component!</h1>
-			{url}
-		</div>
-	);
-};
+const Search = props => {
+  console.log('what is here', props.match.params)
+  const movie = props.match.params.movie // 'avengers'
 
-export default Search;
+  return (
+    <div>
+      <h1>Search component!</h1>
+      {movie}
+    </div>
+  )
+}
+
+export default Search
