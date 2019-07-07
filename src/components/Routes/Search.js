@@ -1,17 +1,14 @@
 import React from 'react'
+import { baseUrl, key } from '../../api'
+import SharedResults from '../Routes/SharedResults'
 
-// visit http://localhost:3000/search/avengers in browser address bar with app running
-
-const Search = props => {
-  console.log('what is here', props.match.params)
-  const movie = props.match.params.movie // 'avengers'
-
-  return (
-    <div>
-      <h1>Search component!</h1>
-      {movie}
-    </div>
-  )
+const Search = ({
+  match: {
+    params: { movie }
+  }
+}) => {
+  const url = `${baseUrl}/search/movie?${key}&query=${encodeURI(movie)}`
+  return <SharedResults url={url} />
 }
 
 export default Search
