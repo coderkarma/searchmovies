@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import NavBar from './components/NavBar/NavBar'
 import Home from './components/Routes/Home'
 import Search from './components/Routes/Search'

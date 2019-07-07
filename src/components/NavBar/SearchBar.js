@@ -25,7 +25,9 @@ class SearchBar extends Component {
           className="mr-sm-2"
           onChange={e => this.setState({ value: e.target.value })}
         />
-        <Button variant="outline-success">Search</Button>
+        <Button type="submit" variant="outline-success">
+          Search
+        </Button>
       </Form>
     )
   }
