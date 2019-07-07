@@ -1,37 +1,33 @@
-import React, { Component } from 'react';
-import { Button, Form, FormControl } from 'react-bootstrap';
-import { withRouter } from 'react-router';
-import '../Styles/SearchBar.css';
+import React, { Component } from 'react'
+import { Button, Form, FormControl } from 'react-bootstrap'
+import { withRouter } from 'react-router'
+import '../Styles/SearchBar.css'
 
 class SearchBar extends Component {
-	state = {
-		value : ''
-	};
+  state = {
+    value: ''
+  }
 
-	render() {
-		const { history } = this.props;
-		return (
-			<Form inline>
-				<FormControl
-					id='input-field'
-					type='text'
-					placeholder='Search Movies...'
-					className='mr-sm-2'
-					onChange={e => this.setState({ value: e.target.value })}
-				/>
-				<Button
-					variant='outline-success'
-					onClick={() => {
-						if (this.state.value !== '') {
-							history.push('/search');
-							this.props.handleSubmit(this.state.value);
-						}
-					}}
-				>
-					Search
-				</Button>
-			</Form>
-		);
-	}
+  handleSubmit = e => {
+    e.preventDefault()
+    if (this.state.value.replace(/\s/gi) !== '') {
+      this.props.history.push(`/search/${this.state.value}`)
+    }
+  }
+
+  render() {
+    return (
+      <Form inline onSubmit={this.handleSubmit}>
+        <FormControl
+          id="input-field"
+          type="text"
+          placeholder="Search Movies..."
+          className="mr-sm-2"
+          onChange={e => this.setState({ value: e.target.value })}
+        />
+        <Button variant="outline-success">Search</Button>
+      </Form>
+    )
+  }
 }
-export default withRouter(SearchBar);
+export default withRouter(SearchBar)
