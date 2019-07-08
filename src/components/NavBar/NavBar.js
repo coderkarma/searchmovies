@@ -11,7 +11,7 @@ class NavBar extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Navbar expand='lg' className='nav-bar sticky-top'>
+				<Navbar expand='lg' bg='dark' variant='dark' sticky='top'>
 					<Navbar.Brand href='/' />
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
 					<Navbar.Collapse id='basic-navbar-nav '>
