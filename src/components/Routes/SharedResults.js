@@ -4,7 +4,7 @@ import ModalTrailer from '../Result/ModalTrailer'
 
 const imageBaseUrl = 'https://image.tmdb.org/t/p/original/'
 
-const NowPlaying = ({ url }) => {
+const SharedResults = ({ url }) => {
   const [movies, setMovies] = useState([])
   const [modal, setModalId] = useState(null)
 
@@ -48,4 +48,4 @@ const NowPlaying = ({ url }) => {
   )
 }
 
-export default NowPlaying
+export default SharedResults
