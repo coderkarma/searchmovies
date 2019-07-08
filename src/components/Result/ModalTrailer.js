@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import YoutubeVideo from '../Result/YoutubeVideo'
 import '../Styles/ModalTrailer.css'
+import { key, baseUrl } from '../../api'
 
 const ModalTrailer = props => {
-  console.log('props ----', props)
   const [videoKey, setVideoKey] = useState(undefined)
 
   useEffect(() => {
-    const movieTrailerEndPoint = `http://api.themoviedb.org/3/movie/${
+    const movieTrailerEndPoint = `${baseUrl}/movie/${
       props.movieId
-    }?api_key=79ce19b11f80253ec95757f195144888&append_to_response=videos`
+    }?${key}&append_to_response=videos`
 
     fetch(movieTrailerEndPoint)
       .then(response => response.json())
@@ -22,7 +22,7 @@ const ModalTrailer = props => {
         setVideoKey(moviesTrailer)
       })
       .catch(error => console.log("here's the error", error))
-  })
+  }, [props.movieId])
 
   return (
     <div>
