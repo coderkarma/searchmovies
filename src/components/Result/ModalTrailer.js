@@ -16,7 +16,7 @@ const ModalTrailer = props => {
       .then(response => {
         if (!response.ok)
           throw Error(`It went wrong ${response.status} message: ${response.statusText}`)
-        response.json()
+        return response.json()
       })
       .then(movieTrailer => {
         console.log('Here is the modal movie trailer', movieTrailer)
