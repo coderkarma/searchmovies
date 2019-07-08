@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap'
 import YoutubeVideo from '../Result/YoutubeVideo'
 import '../Styles/ModalTrailer.css'
 
-const ModelTrailer = props => {
+const ModalTrailer = props => {
   console.log('props ----', props)
   const [videoKey, setVideoKey] = useState(undefined)
 
@@ -46,4 +46,4 @@ const ModelTrailer = props => {
   )
 }
 
-export default ModelTrailer
+export default ModalTrailer
