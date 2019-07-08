@@ -13,7 +13,11 @@ const ModalTrailer = props => {
     }?${key}&append_to_response=videos`
 
     fetch(movieTrailerEndPoint)
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok)
+          throw Error(`It went wrong ${response.status} message: ${response.statusText}`)
+        response.json()
+      })
       .then(movieTrailer => {
         console.log('Here is the modal movie trailer', movieTrailer)
 
@@ -21,7 +25,7 @@ const ModalTrailer = props => {
 
         setVideoKey(moviesTrailer)
       })
-      .catch(error => console.log("here's the error", error))
+      .catch(console.log)
   }, [props.movieId])
 
   return (
