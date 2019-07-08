@@ -8,13 +8,12 @@ const ModelTrailer = props => {
 	const [ videoKey, setVideoKey ] = useState(undefined);
 
 	useEffect(() => {
-		console.log('Effect has fired');
 		const movieTrailerEndPoint = `http://api.themoviedb.org/3/movie/${props.movieId}?api_key=79ce19b11f80253ec95757f195144888&append_to_response=videos`;
 
 		fetch(movieTrailerEndPoint)
 			.then(response => response.json())
 			.then(movieTrailer => {
-				console.log('Here is the movie trailer', movieTrailer);
+				console.log('Here is the modal movie trailer', movieTrailer);
 
 				const moviesTrailer = movieTrailer.videos.results[0].key;
 

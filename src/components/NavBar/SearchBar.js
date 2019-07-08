@@ -8,26 +8,29 @@ class SearchBar extends Component {
 		value : ''
 	};
 
+	handleSubmit = e => {
+		e.preventDefault();
+		// replace the space of all occurances , i is case sensitive
+		if (this.state.value.replace(/\s/gi) !== '') {
+			this.props.history.push(`/search/${this.state.value}`);
+		}
+		this.setState({
+			value : ''
+		});
+	};
+
 	render() {
-		const { history } = this.props;
 		return (
-			<Form inline>
+			<Form inline onSubmit={this.handleSubmit}>
 				<FormControl
 					id='input-field'
 					type='text'
 					placeholder='Search Movies...'
 					className='mr-sm-2'
 					onChange={e => this.setState({ value: e.target.value })}
+					value={this.state.value}
 				/>
-				<Button
-					variant='outline-success'
-					onClick={() => {
-						if (this.state.value !== '') {
-							history.push('/search');
-							this.props.handleSubmit(this.state.value);
-						}
-					}}
-				>
+				<Button type='submit' variant='outline-success'>
 					Search
 				</Button>
 			</Form>

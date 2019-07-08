@@ -4,7 +4,7 @@ import '../Styles/Result.css';
 
 const Result = props => {
 	let images = props.results.map((result, idx) => {
-		let image = `https://image.tmdb.org/t/p/w500/${result.poster_path}`;
+		let image = `https://image.tmdb.org/t/p/w500/${result.poster_path} `;
 
 		return (
 			<Col xs={12} md={4} lg={3} key={idx}>

@@ -1,15 +1,10 @@
 import React from 'react';
+import { baseUrl, key } from '../../api';
+import SharedResults from '../Routes/SharedResults';
 
-const Search = ({ props, movie }) => {
-	console.log('what is here', props.match.params);
-	const url = `props.match.params:${movie}`;
-
-	return (
-		<div>
-			<h1>Search component!</h1>
-			{url}
-		</div>
-	);
+const Search = ({ match: { params: { movie } } }) => {
+	const url = `${baseUrl}/search/movie?${key}&query=${encodeURI(movie)}`;
+	return <SharedResults url={url} />;
 };
 
 export default Search;
