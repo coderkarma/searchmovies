@@ -11,18 +11,21 @@ const imageBaseUrl = 'https://image.tmdb.org/t/p/original/';
 const ResultCarousel = props => {
 	const [ movies, setMoviesState ] = useState([]);
 
-	useEffect(
-		() => {
-			fetch(getUpcomingMovie)
-				.then(response => response.json())
-				.then(upComingMovie => {
-					const moviesData = upComingMovie.results;
-					setMoviesState(moviesData.filter(m => m.backdrop_path));
-				})
-				.catch(err => console.log(err));
-		},
-		[ props.id ]
-	);
+	useEffect(() => {
+		fetch(getUpcomingMovie)
+			.then(response => {
+				if (!response.ok)
+					throw Error(
+						`It went wrong ${response.status} message: ${response.statusText}`
+					);
+				return response.json();
+			})
+			.then(upComingMovie => {
+				const moviesData = upComingMovie.results;
+				setMoviesState(moviesData.filter(m => m.backdrop_path));
+			})
+			.catch(err => console.log(err));
+	}, []);
 
 	const result = movies.map((movie, index) => {
 		return (

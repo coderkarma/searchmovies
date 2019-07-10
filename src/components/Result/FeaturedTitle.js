@@ -25,7 +25,7 @@ const TrendingShows = props => {
 				const trendingAllShows = trendingShows.results;
 				setTrendingShowstate(trendingAllShows);
 			});
-	}, [trending]);
+	}, []);
 
 	const trendingShows = trending.map((trendingShow, idx) => {
 		const handleTrailerOnClick = movieIndex => {
