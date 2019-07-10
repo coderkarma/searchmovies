@@ -50,7 +50,7 @@ const NowPlaying = ({ url }) => {
 				className='col-lg-4 col-md-4 col-12'
 			>
 				<Col>
-					<Card className='my-3 h-100 shadow'>
+					<Card className='my-3 h-100 shadow '>
 						<Card.Img
 							variant='top'
 							src={`${imageBaseUrl}${movie.backdrop_path ||
@@ -62,7 +62,7 @@ const NowPlaying = ({ url }) => {
 							<span className='text-center'>
 								<Button
 									onClick={e => setModalId(movie.id)}
-									className='trailer-button'
+									className='trailer-button bg-dark'
 								>
 									Trailer
 								</Button>

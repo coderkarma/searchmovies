@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
+
 import ModalTrailer from '../Result/ModalTrailer';
 import '../Styles/FeaturedTtitle.css';
 
@@ -24,7 +25,7 @@ const TrendingShows = props => {
 				const trendingAllShows = trendingShows.results;
 				setTrendingShowstate(trendingAllShows);
 			});
-	}, []);
+	}, [trending]);
 
 	const trendingShows = trending.map((trendingShow, idx) => {
 		const handleTrailerOnClick = movieIndex => {
