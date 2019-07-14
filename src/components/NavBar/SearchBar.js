@@ -21,7 +21,7 @@ class SearchBar extends Component {
 
 	render() {
 		return (
-			<Form inline onSubmit={this.handleSubmit}>
+			<Form inline onSubmit={this.handleSubmit} className='formWrapper'>
 				<FormControl
 					id='input-field'
 					type='text'

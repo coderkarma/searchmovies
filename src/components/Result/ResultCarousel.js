@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-// import { useTransition, animated, config } from 'react-spring';
+import { useTransition, animated, config } from 'react-spring';
 import '../Styles/ResultCarousel.css';
 
 const getUpcomingMovie =
@@ -9,22 +9,48 @@ const getUpcomingMovie =
 const imageBaseUrl = 'https://image.tmdb.org/t/p/original/';
 
 const ResultCarousel = props => {
-	const [ movies, setMoviesState ] = useState([]);
+	// const [ movies, setMoviesState ] = useState([]);
+	// const [ index, set ] = useState(0);
+
+	// const transitions = useTransition(movies[index], item => item.id, {
+	// 	from   : { opacity: 0 },
+	// 	enter  : { opacity: 1 },
+	// 	leave  : { opacity: 0 },
+	// 	config : config.molasses
+	// });
 
 	useEffect(() => {
-		fetch(getUpcomingMovie)
-			.then(response => {
-				if (!response.ok)
+		// fetch(getUpcomingMovie)
+		// 	.then(response => {
+		// 		if (!response.ok)
+		// 			throw Error(
+		// 				`It went wrong ${response.status} message: ${response.statusText}`
+		// 			);
+		// 		return response.json();
+		// 	})
+		// 	.then(upComingMovie => {
+		// 		const moviesData = upComingMovie.results;
+		// 		setMoviesState(moviesData.filter(m => m.backdrop_path));
+		// 	})
+		// 	.catch(err => console.log(err));
+		const fetchData = async () => {
+			try {
+				const response = await fetch(getUpcomingMovie);
+
+				if (!response.ok) {
 					throw Error(
 						`It went wrong ${response.status} message: ${response.statusText}`
 					);
-				return response.json();
-			})
-			.then(upComingMovie => {
+				}
+				const upComingMovie = await response.json();
 				const moviesData = upComingMovie.results;
 				setMoviesState(moviesData.filter(m => m.backdrop_path));
-			})
-			.catch(err => console.log(err));
+			} catch (err) {
+				console.log(err);
+			}
+		};
+
+		fetchData();
 	}, []);
 
 	const result = movies.map((movie, index) => {

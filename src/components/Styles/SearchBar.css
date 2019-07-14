@@ -1,12 +1,16 @@
 #input-field {
-    width: 50rem;
+    max-width: 50rem;
     height: 3rem;
 }
 
-@media (min-width: 1022px) {
-    #input-field {
+@media (min-width: 600px) {
+    .formWrapper {
         display: flex;
-        width: 30rem;
-        
+        flex-flow: nowrap;
+    }
+
+    #input-field {
+        min-width: 30rem;
+        width: 100%;
     }
 }
