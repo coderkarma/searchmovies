@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-import { useTransition, animated, config } from 'react-spring';
+// import { useTransition, animated, config } from 'react-spring';
 import '../Styles/ResultCarousel.css';
 
 const getUpcomingMovie =
@@ -9,8 +9,8 @@ const getUpcomingMovie =
 const imageBaseUrl = 'https://image.tmdb.org/t/p/original/';
 
 const ResultCarousel = props => {
-	// const [ movies, setMoviesState ] = useState([]);
-	// const [ index, set ] = useState(0);
+	const [ movies, setMoviesState ] = useState([]);
+	//  const [ index, set ] = useState(0);
 
 	// const transitions = useTransition(movies[index], item => item.id, {
 	// 	from   : { opacity: 0 },
@@ -20,19 +20,6 @@ const ResultCarousel = props => {
 	// });
 
 	useEffect(() => {
-		// fetch(getUpcomingMovie)
-		// 	.then(response => {
-		// 		if (!response.ok)
-		// 			throw Error(
-		// 				`It went wrong ${response.status} message: ${response.statusText}`
-		// 			);
-		// 		return response.json();
-		// 	})
-		// 	.then(upComingMovie => {
-		// 		const moviesData = upComingMovie.results;
-		// 		setMoviesState(moviesData.filter(m => m.backdrop_path));
-		// 	})
-		// 	.catch(err => console.log(err));
 		const fetchData = async () => {
 			try {
 				const response = await fetch(getUpcomingMovie);
