@@ -18,7 +18,7 @@
     display: flex;
 }
 
-@media (max-width: 12450px) {
+@media (max-width: 1000px) {
     h1 {
         font-weight: 300;
         font-size: 10px;
