@@ -34,7 +34,7 @@ class NavBar extends Component {
 								<Link to='/top-rated'>Top Rated</Link>
 							</Nav>
 
-							<SearchBar handleSubmit={this.props.handleSubmit} />
+							<SearchBar />
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>
