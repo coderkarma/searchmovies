@@ -4,7 +4,7 @@ import ModalTrailer from '../Result/ModalTrailer';
 import { useTrail, animated, config } from 'react-spring';
 import '../Styles/NowPlaying.css';
 
-const imageBaseUrl = 'https://image.tmdb.org/t/p/original/';
+const imageBaseUrl = 'https://image.tmdb.org/t/p/w500/';
 
 const NowPlaying = ({ url }) => {
 	const [ movies, setMovies ] = useState([]);
