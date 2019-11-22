@@ -14,3 +14,10 @@ The movie database API
 
 # Technologies used 
 React, bootstrap HTML, CSS
+
+
+
+# Todos 
+1. Database
+2. Login/ Google Auth
+3. User' profile and ability to save the favorite movies in to their profile.
