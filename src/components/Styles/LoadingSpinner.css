@@ -1,0 +1,9 @@
+.spinner-div {
+  margin: 0 auto;
+  font-size: 6rem;
+}
+
+.spinner {
+  display: flex;
+  margin: 0 auto;
+}

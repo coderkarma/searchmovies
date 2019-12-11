@@ -12,7 +12,7 @@ const App = () => {
     <Router>
       <div>
         <NavBar />
-        <Route path="/" exact component={Home} />
+        <Route exact path="/"  component={Home} />
         <Route path="/discover" component={() => <SharedResults url={discover} />} />
         <Route path="/now-playing" component={() => <SharedResults url={nowPlaying} />} />
         <Route path="/top-rated" component={() => <SharedResults url={topRated} />} />
