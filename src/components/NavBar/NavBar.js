@@ -4,7 +4,6 @@ import SearchBar from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-
 import '../Styles/NavBar.css';
 
 class NavBar extends Component {
@@ -35,6 +34,7 @@ class NavBar extends Component {
 							</Nav>
 
 							<SearchBar />
+							
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>

@@ -53,7 +53,7 @@ const ResultCarousel = props => {
 					<span className='title'>
 						<h1>{movie.title}</h1>
 					</span>
-					<p class="overview">{movie.overview}</p>
+					<p className="overview">{movie.overview}</p>
 					<h1>Release Date- {movie.release_date}</h1>
 				</Carousel.Caption>
 			</Carousel.Item>
