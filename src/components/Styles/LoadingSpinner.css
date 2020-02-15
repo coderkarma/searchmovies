@@ -1,7 +1,11 @@
+div.spinner-div {
+    margin: auto;
+}
 
-.spinner {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: 0 auto;
+.spinner-center {
+    display: flex;
+}
+.spinner-border {
+    width: 6rem;
+    height: 6rem;
 }
