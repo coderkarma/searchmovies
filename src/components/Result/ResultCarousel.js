@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-import { getUpcomingMovie, imageUrl, discover } from '../../api/index';
+import { getUpcomingMovie, imageUrl} from '../../api/index';
 import LoadingSpinner from '../LoadingSpinner';
 
 import '../Styles/ResultCarousel.css';
