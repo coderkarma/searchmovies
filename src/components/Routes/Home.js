@@ -3,12 +3,12 @@ import ResultCarousel from '../Result/ResultCarousel';
 import FeaturedTile from '../Result/FeaturedTitle';
 
 const Home = () => {
-	return (
-		<div>
-			<ResultCarousel />
-			<FeaturedTile />
-		</div>
-	);
+    return (
+        <div>
+            <ResultCarousel />
+            <FeaturedTile />
+        </div>
+    );
 };
 
 export default Home;
