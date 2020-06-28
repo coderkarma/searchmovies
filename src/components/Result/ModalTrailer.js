@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Modal, Button, Toast } from 'react-bootstrap';
 import YoutubeVideo from '../Result/YoutubeVideo';
 import { key, baseUrl } from '../../api/index';
+//import LoadingSpinner  from '../LoadingSpinner';
 
 import '../Styles/ModalTrailer.css';
 
 const ModelTrailer = props => {
-	console.log('props ----', props);
 	const [ videoKey, setVideoKey ] = useState(undefined);
 	const [ toast, setToast ] = useState(null);
 

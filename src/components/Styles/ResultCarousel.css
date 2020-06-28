@@ -6,6 +6,25 @@
 	background-position: center;
 	background-size: cover;
 }
+.carousel-caption {
+	opacity: 0;
+}
+.carousel-caption:hover {
+	opacity: 1;
+	background: transparent;
+	box-shadow: aquamarine;
+	transition: 0.5 ease;
+}
+
+.carousel-caption {
+	opacity: 0;
+}
+.carousel-caption:hover {
+	opacity: 1;
+	background: transparent;
+	box-shadow: aquamarine;
+	transition: 0.5 ease;
+}
 
 .carousel_images li {
 	display: none;
@@ -49,6 +68,5 @@
 		font-weight: 700;
 		text-transform: uppercase;
 		font-size: 30px;
-		
 	}
 }
