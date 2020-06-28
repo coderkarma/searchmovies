@@ -6,7 +6,6 @@ import { key, baseUrl } from '../../api/index';
 import '../Styles/ModalTrailer.css';
 
 const ModelTrailer = props => {
-	console.log('props ----', props);
 	const [ videoKey, setVideoKey ] = useState(undefined);
 	const [ toast, setToast ] = useState(null);
 

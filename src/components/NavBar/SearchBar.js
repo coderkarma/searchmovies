@@ -1,40 +1,38 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
 import { withRouter } from 'react-router';
 import '../Styles/SearchBar.css';
 
-class SearchBar extends Component {
-	state = {
-		value : ''
-	};
+const SearchBar = (props) => {
+	const [value, setValue] = useState('');
 
-	handleSubmit = e => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
-		// replace the space of all occurances , i is case sensitive
-		if (this.state.value.replace(/\s/gi) !== '') {
-			this.props.history.push(`/search/${this.state.value}`);
+		const { history } = props;
+
+		if (value.replace(/\s/gi) !== '') {
+			history.push(`/search/${value}`);
 		}
-		this.setState({
-			value : ''
-		});
+		setValue('');
 	};
 
-	render() {
-		return (
-			<Form inline onSubmit={this.handleSubmit} className='formWrapper'>
-				<FormControl
-					id='input-field'
-					type='text'
-					placeholder='Search Movies...'
-					className='mr-sm-2'
-					onChange={e => this.setState({ value: e.target.value })}
-					value={this.state.value}
-				/>
-				<Button type='submit' variant='outline-success'>
-					Search
-				</Button>
-			</Form>
-		);
-	}
-}
+	const handleChange = (e) => setValue(e.target.value);
+
+	return (
+		<Form inline onSubmit={handleSubmit} className='formWrapper'>
+			<FormControl
+				id='input-field'
+				type='text'
+				placeholder='Search Movies...'
+				className='mr-sm-2'
+				onChange={handleChange}
+				value={value}
+				required
+			/>
+			<Button type='submit' variant='outline-success'>
+				Search
+			</Button>
+		</Form>
+	);
+};
 export default withRouter(SearchBar);
